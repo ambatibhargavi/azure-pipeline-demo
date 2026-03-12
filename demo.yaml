@@ -5,5 +5,14 @@ pool:
   name: Default
 
 steps:
-- script: echo "Pipeline triggered from Git repository"
-  displayName: Test pipeline
+
+- task: UsePythonVersion@0
+  inputs:
+    versionSpec: '3.x'
+  displayName: Install Python
+
+- script: pip install -r requirements.txt
+  displayName: Install Dependencies
+
+- script: python app.py
+  displayName: Run Python Script
