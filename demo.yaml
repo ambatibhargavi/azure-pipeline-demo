@@ -1,0 +1,9 @@
+trigger:
+- main
+
+pool:
+  name: Default
+
+steps:
+- script: echo "Pipeline triggered from Git repository"
+  displayName: Test pipeline
